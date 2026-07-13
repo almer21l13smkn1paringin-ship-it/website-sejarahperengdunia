@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Perang Dunia II - Analisis Strategis</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Header Premium & Minimalis */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #991b1b;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigasi Sticky Modern */
+        .menu {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .menu a {
+            color: #475569;
+            text-decoration: none;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu a:hover, .menu a.active {
+            color: #991b1b;
+        }
+
+        .menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #991b1b;
+        }
+
+        /* Tata Letak Konten Utama */
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        #judul {
+            color: #0f172a;
+            margin-bottom: 35px;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #334155;
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            color: #991b1b;
+            font-weight: 600;
+            background-color: #fee2e2;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Kotak Analisis / Fakta Singkat yang Elegan */
+        .fact-box {
+            background-color: #ffffff;
+            border-left: 4px solid #475569;
+            margin: 35px 0;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .fact-box h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Blok Pemimpin Aliansi (Card Grid Modern) */
+        .leaders-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02);
+        }
+
+        .leaders-box h3 {
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .alliance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .alliance-card {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .sekutu-title {
+            color: #1d4ed8;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .poros-title {
+            color: #b91c1c;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #fee2e2;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .alliance-card ul {
+            list-style: none;
+        }
+
+        .alliance-card ul li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #334155;
+            display: flex;
+            align-items: center;
+        }
+
+        .alliance-card ul li span {
+            margin-right: 10px;
+            filter: grayscale(20%);
+        }
+
+        /* --- SEKSI PETA ABSTRAK & MODERN --- */
+        .map-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02);
+            margin: 40px 0;
+        }
+
+        .map-section h3 {
+            color: #0f172a;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+        }
+
+        .map-container {
+            position: relative;
+            max-width: 450px;
+            margin: 0 auto;
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Efek Radar Berkedip Modern pada Peta */
+        .radar-point {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { r: 4; opacity: 1; }
+            50% { r: 10; opacity: 0.4; }
+            100% { r: 15; opacity: 0; }
+        }
+
+        /* --- SEKSI FORMULIR DAFTAR EMAIL / NEWSLETTER --- */
+        .newsletter-section {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .newsletter-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .newsletter-section p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .subscribe-form input[type="email"] {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background-color: #1e293b;
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .subscribe-form input[type="email"]:focus {
+            border-color: #991b1b;
+        }
+
+        .subscribe-form button {
+            background-color: #991b1b;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #b91c1c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 768px) {
+            .alliance-grid { grid-template-columns: 1fr; }
+            .subscribe-form { flex-direction: column; }
+            .menu a { padding: 15px 15px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sejarah Perang Dunia II</h1>
+        <p>Arsip Kronologis, Analisis Strategis, dan Dokumentasi Konflik Global 1939–1945</p>
+    </header>
+
+    <div class="menu">
+        <a href="index.html" class="active">Latar Belakang</a>
+        <a href="Tokoh.html">Tokoh Penting</a>
+        <a href="pertempuran.html">Teater Pertempuran</a>
+        <a href="akhir perang.html">Akhir Perang</a>
+    </div>
+
+    <div class="container">
+
+        <h2 id="judul">Latar Belakang Krisis Global</h2>
+
+        <p>
+            Perang Dunia II merupakan konflik militer global paling destruktif dalam sejarah peradaban manusia, yang berlangsung dari tahun 
+            <span class="highlight">1939</span> hingga <span class="highlight">1945</span>. Krisis ini memaksa keterlibatan mayoritas kekuatan besar dunia yang akhirnya mengkristal ke dalam dua aliansi militer strategis yang saling berlawanan.
+        </p>
+
+        <p>
+            Dua kekuatan raksasa yang bertarung di medan laga kolosal ini diidentifikasi sebagai 
+            <span class="highlight">Blok Sekutu</span> dan <span class="highlight">Blok Poros</span>, yang masing-masing digerakkan oleh doktrin politik dan kepentingan geopolitik yang berbeda.
+        </p>
+
+        <div class="fact-box">
+            <h3>Analisis Dampak Kemanusiaan</h3>
+            <p>
+                Konflik ini menelan korban jiwa yang diperkirakan mencapai lebih dari 70 juta individu. Skala kehancuran yang masif ini disebabkan oleh modernisasi teknologi militer, perang total (total war), serta tragedi kemanusiaan sistematis di berbagai belahan dunia.
+            </p>
+        </div>
+
+        <div class="leaders-box">
+            <h3>Struktur Kepemimpinan Aliansi Utama</h3>
+            <div class="alliance-grid">
+                
+                <div class="alliance-card">
+                    <div class="sekutu-title">Blok Sekutu (Allied Powers)</div>
+                    <ul>
+                        <li><span>🇬🇧</span> Winston Churchill (Britania Raya)</li>
+                        <li><span>🇺🇸</span> Franklin D. Roosevelt (Amerika Serikat)</li>
+                        <li><span>🇷🇺</span> Joseph Stalin (Uni Soviet)</li>
+                    </ul>
+                </div>
+
+                <div class="alliance-card">
+                    <div class="poros-title">Blok Poros (Axis Powers)</div>
+                    <ul>
+                        <li><span>🇩🇪</span> Adolf Hitler (Jerman)</li>
+                        <li><span>🇮🇹</span> Benito Mussolini (Italia)</li>
+                        <li><span>🇯🇵</span> Hideki Tojo (Jepang)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h3>Teater Operasi Utama (Infografis Strategis)</h3>
+            
+            <div class="map-container">
+                <svg viewBox="0 0 400 220" width="100%" height="100%" style="display: block;">
+                    <polygon points="40,30 160,20 190,90 140,120 70,110" fill="#1e293b" stroke="#334155" stroke-width="1" />
+                    <polygon points="190,30 340,30 370,130 260,150 190,90" fill="#1e293b" stroke="#334155" stroke-width="1" />
+                    <polygon points="50,140 150,130 170,200 100,210" fill="#1e293b" stroke="#334155" stroke-width="1" />
+
+                    <text x="90" y="70" font-size="12" fill="#94a3b8" font-weight="600" letter-spacing="1">EROPA</text>
+                    <text x="260" y="80" font-size="12" fill="#94a3b8" font-weight="600" letter-spacing="1">ASIA</text>
+                    <text x="90" y="175" font-size="11" fill="#64748b" font-weight="600" letter-spacing="1">AFRIKA UTARA</text>
+
+                    <circle cx="130" cy="65" r="3" fill="#ef4444" />
+                    <circle cx="130" cy="65" r="4" fill="none" stroke="#ef4444" stroke-width="1.5" class="radar-point" />
+                    
+                    <circle cx="310" cy="85" r="3" fill="#ef4444" />
+                    <circle cx="310" cy="85" r="4" fill="none" stroke="#ef4444" stroke-width="1.5" class="radar-point" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="newsletter-section">
+            <h3>Dapatkan Arsip Sejarah Bulanan</h3>
+            <p>Daftarkan email Anda untuk menerima ulasan mendalam mengenai taktik militer, dokumen rahasia, dan analisis pertempuran Perang Dunia II.</p>
+            <form class="subscribe-form" action="#" method="POST" onsubmit="alert('Terima kasih telah mendaftar!'); return false;">
+                <input type="email" placeholder="Masukkan alamat email Anda" required>
+                <button type="submit">Gabung Arsip</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Jurnal Sejarah Perang Dunia II. Dikembangkan untuk Keperluan Edukasi dan Riset.
+    </footer>
+
+</body>
+
+</html>

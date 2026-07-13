@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Perang Dunia II - Tokoh Strategis</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background-color: #f8fafc;
+        }
+
+        /* Header Premium & Minimalis */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #991b1b;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigasi Sticky Modern */
+        .menu {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .menu a {
+            color: #475569;
+            text-decoration: none;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu a:hover, .menu a.active {
+            color: #991b1b;
+        }
+
+        .menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #991b1b;
+        }
+
+        /* Konten Utama Container */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        h2 {
+            color: #0f172a;
+            margin-bottom: 45px;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        /* Desain Grid Galeri Tokoh Modern */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        /* Card Premium Pembungkus Foto & Biodata */
+        .card {
+            position: relative;
+            background-color: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            height: 420px;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(15, 23, 42, 0.25);
+        }
+
+        /* Pengaturan Gambar Tokoh */
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(15%) brightness(90%);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%) brightness(75%);
+        }
+
+        /* Panel Biodata Transparan Premium */
+        .biodata-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 60%, rgba(15, 23, 42, 0.4) 100%);
+            color: #ffffff;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Memunculkan Overlay Saat Hover */
+        .card:hover .biodata-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Penanda Aliansi / Kubu (Badge) */
+        .badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .badge.sekutu {
+            background-color: rgba(29, 78, 216, 0.3);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.5);
+        }
+
+        .badge.poros {
+            background-color: rgba(185, 28, 28, 0.3);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.5);
+        }
+
+        /* Tipografi Informasi di dalam Card */
+        .biodata-overlay h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+
+        .biodata-overlay .jabatan {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .biodata-overlay p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            text-align: justify;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .menu a { padding: 15px 15px; font-size: 0.8rem; }
+            .biodata-overlay { opacity: 1; transform: translateY(0); background: linear-gradient(to top, rgba(15, 23, 42, 0.98) 70%, rgba(15, 23, 42, 0.6) 100%); }
+            .card { height: 400px; }
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .menu { flex-direction: column; }
+            .menu a { width: 100%; text-align: center; border-bottom: 1px solid #f1f5f9; }
+            .menu a.active::after { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sejarah Perang Dunia II</h1>
+        <p>Arsip Kronologis, Analisis Strategis, dan Dokumentasi Konflik Global 1939–1945</p>
+    </header>
+
+    <div class="menu">
+        <a href="index.html">Latar Belakang</a>
+        <a href="tokoh.html" class="active">Tokoh Penting</a>
+        <a href="Pertempuran.html">Teater Pertempuran</a>
+        <a href="akhir perang.html">Akhir Perang</a>
+    </div>
+
+    <div class="container">
+
+        <h2>Para Pemimpin & Arsitek Strategi Perang</h2>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="https://www.finansialku.com/wp-content/uploads/2018/04/Kata-Kata-Bijak-Winston-Churchill-Perdana-Menteri-Inggris-06-Finansialku.jpg" alt="Winston Churchill">
+                <div class="biodata-overlay">
+                    <div class="badge sekutu">Blok Sekutu</div>
+                    <h3>Winston Churchill</h3>
+                    <div class="jabatan">Perdana Menteri Britania Raya</div>
+                    <p>Memimpin Britania Raya melewati masa-masa paling kelam dalam perang melawan Nazi Jerman. Terkenal dengan kekuatan diplomasi, pidato yang membakar mobilisasi massa, serta keteguhan taktisnya dalam aliansi besar.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://nationaltoday.com/wp-content/uploads/2022/11/1-Franklin-D-Roosevelt-1200x834.jpg" alt="Franklin D. Roosevelt">
+                <div class="biodata-overlay">
+                    <div class="badge sekutu">Blok Sekutu</div>
+                    <h3>Franklin D. Roosevelt</h3>
+                    <div class="jabatan">Presiden Amerika Serikat</div>
+                    <p>Presiden AS ke-32 yang membawa negaranya keluar dari kebijakan isolasionisme pasca-tragedi Pearl Harbor. Ia merancang strategi "Arsenal of Democracy" yang menyokong seluruh logistik industri militer Sekutu.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.griNjd3kN8eXotZ8eLhhHAHaDt?r=0&pid=Api&h=220&P=0" alt="Joseph Stalin">
+                <div class="biodata-overlay">
+                    <div class="badge sekutu">Blok Sekutu</div>
+                    <h3>Joseph Stalin</h3>
+                    <div class="jabatan">Pemimpin Tertinggi Uni Soviet</div>
+                    <p>Meredam total gempuran operasi kilat Jerman di Front Timur. Melalui pertempuran atrisi yang destruktif di Stalingrad, komando militernya berhasil membalikkan keadaan hingga merebut jantung pertahanan musuh di Berlin.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.thecollector.com/wp-content/uploads/2024/04/adolf-hitler-in-color.jpg?width=1200&quality=55" alt="Adolf Hitler">
+                <div class="biodata-overlay">
+                    <div class="badge poros">Blok Poros</div>
+                    <h3>Adolf Hitler</h3>
+                    <div class="jabatan">Führer Jerman Nazi</div>
+                    <p>Pemimpin absolut Jerman yang memicu konflik global melalui invasi ke Polandia pada September 1939. Mengembangkan doktrin ekspansionis ekstrem (*Lebensraum*) dan mengarsiteki sistem represi total di wilayah pendudukan.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://learnspira.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-16-at-13.53.50-1024x683.jpeg" alt="Benito Mussolini">
+                <div class="biodata-overlay">
+                    <div class="badge poros">Blok Poros</div>
+                    <h3>Benito Mussolini</h3>
+                    <div class="jabatan">Diktator Fasis Italia</div>
+                    <p>Pelopor utama ideologi fasisme modern di Eropa yang menyeret Italia ke dalam poros militer agresif bersama Jerman. Ambisi hegemoninya di kawasan Mediterania dan Afrika Timur berakhir dengan keruntuhan rezimnya.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://media.japanesestation.com/images/750x422/2020/10/19/90143-hideki-tojo.jpg" alt="Hideki Tojo">
+                <div class="biodata-overlay">
+                    <div class="badge poros">Blok Poros</div>
+                    <h3>Hideki Tojo</h3>
+                    <div class="jabatan">Perdana Menteri Kekaisaran Jepang</div>
+                    <p>Jenderal Angkatan Darat Kekaisaran yang mengontrol penuh kebijakan militeristik Jepang. Ia bertanggung jawab atas keputusan penyerangan Pearl Harbor serta mobilisasi kampanye ekspansi militer masif di Asia Tenggara.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Jurnal Sejarah Perang Dunia II. Dikembangkan untuk Keperluan Edukasi dan Riset.
+    </footer>
+
+</body>
+
+</html>

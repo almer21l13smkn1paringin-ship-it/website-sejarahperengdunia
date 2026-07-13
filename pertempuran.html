@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Perang Dunia II - Analisis Latar Belakang</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.75;
+            color: #334155;
+            background-color: #f8fafc;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header Premium & Estetik */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #991b1b;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Navigasi Sticky Modern dengan Efek Blur */
+        .menu {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .menu a {
+            color: #475569;
+            text-decoration: none;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu a:hover, .menu a.active {
+            color: #991b1b;
+        }
+
+        /* Garis indikator aktif yang minimalis di bawah menu */
+        .menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #991b1b;
+        }
+
+        /* Konten Utama */
+        .container {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .main-title {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            color: #0f172a;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background-color: #991b1b;
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #334155;
+            font-size: 1.05rem;
+        }
+
+        p b {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* Layout Grid Penyebab Perang yang Seimbang */
+        .grid-causes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .cause-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cause-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cause-card h4 {
+            color: #991b1b;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .cause-card p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Membuat kartu terakhir memanjang penuh jika ganjil agar rapi */
+        .cause-card:last-child {
+            grid-column: span 2;
+        }
+
+        /* Box Fakta Pembatas Premium */
+        .fact-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #991b1b;
+            margin: 50px 0 20px 0;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .fact-box h3 {
+            color: #991b1b;
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .fact-box p {
+            color: #7f1d1d;
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .grid-causes {
+                grid-template-columns: 1fr;
+            }
+            .cause-card:last-child {
+                grid-column: span 1;
+            }
+            .container {
+                margin: 40px auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            header p { font-size: 0.9rem; }
+            .menu { flex-direction: column; }
+            .menu a { width: 100%; text-align: center; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+            .menu a.active::after { display: none; }
+            .main-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sejarah Perang Dunia II</h1>
+        <p>Dokumentasi & Analisis Kronologis</p>
+    </header>
+
+    <div class="menu">
+        <a href="index.html" class="active">Latar Belakang</a>
+        <a href="tokoh.html">Tokoh</a>
+        <a href="pertempuran.html">Pertempuran</a>
+        <a href="akhir perang.html">Akhir Perang</a>
+    </div>
+
+    <div class="container">
+
+        <h1 class="main-title">Latar Belakang Terjadinya Perang Dunia II</h1>
+
+        <h2>Konteks Awal</h2>
+        <p>
+            Perang Dunia II dimulai secara masif pada tanggal <b>1 September 1939</b> ketika Jerman di bawah kendali rezim 
+            <b>Adolf Hitler</b> melancarkan invasi mendadak ke Polandia. Menanggapi agresi tersebut, dalam waktu dua hari, 
+            Inggris dan Prancis secara resmi menyatakan perang terhadap Jerman, menandai pecahnya konflik global terbesar dalam sejarah.
+        </p>
+
+        <h2>Akar Penyebab Konflik</h2>
+        <p>Kombinasi berbagai faktor politik, ekonomi, dan ideologi radikal memicu meletusnya perang ini:</p>
+
+        <div class="grid-causes">
+            <div class="cause-card">
+                <h4>1. Kebangkitan Nazi Jerman</h4>
+                <p>Naiknya Adolf Hitler sebagai diktator memicu remiliterisasi agresif yang melanggar batasan internasional demi ambisi perluasan wilayah.</p>
+            </div>
+            <div class="cause-card">
+                <h4>2. Kegagalan Perjanjian Versailles</h4>
+                <p>Sanksi ekonomi dan wilayah yang dijatuhkan pasca-Perang Dunia I menyisakan sentimen negatif dan rasa dendam mendalam bagi rakyat Jerman.</p>
+            </div>
+            <div class="cause-card">
+                <h4>3. Doktrin Ekspansi Wilayah</h4>
+                <p>Ambisi memperluas ruang hidup (*Lebensraum*) mendorong Jerman menganeksasi Austria dan Cekoslowakia sebelum akhirnya bergerak menuju Polandia.</p>
+            </div>
+            <div class="cause-card">
+                <h4>4. Fasisme Italia</h4>
+                <p>Di bawah kepemimpinan totaliter Benito Mussolini, Italia mengadopsi kebijakan luar negeri yang agresif dan membentuk aliansi erat dengan Berlin.</p>
+            </div>
+            <div class="cause-card">
+                <h4>5. Militerisme Ekspansif Jepang</h4>
+                <p>Kekaisaran Jepang meluncurkan kampanye militer masif di Asia Timur dan Pasifik demi mengamankan jalur pasokan sumber daya alam global.</p>
+            </div>
+        </div>
+
+        <h2>Eskalasi Jalannya Perang</h2>
+        <p>
+            Pasca kejatuhan Polandia, Jerman menerapkan taktik perang kilat (*Blitzkrieg*) yang sukses melumpuhkan 
+            <b>Prancis, Belanda, Belgia,</b> serta <b>Denmark</b> dalam waktu singkat. Skala konflik meluas secara dramatis pada tahun 1941 saat Jerman mengkhianati pakta non-agresi dan menyerang Uni Soviet, disusul serangan mendadak Jepang ke pangkalan armada laut Amerika Serikat di <b>Pearl Harbor</b>.
+        </p>
+
+        <h2>Akhir dari Konfrontasi</h2>
+        <p>
+            Gelombang pertempuran berbalik dan secara resmi berakhir pada tahun <b>1945</b>. Di teater Eropa, kekuatan poros runtuh setelah Berlin dikepung dan Jerman menyatakan menyerang tanpa syarat pada <b>8 Mei 1945</b>. Sementara di Asia, Jepang akhirnya menyerah pasrah pada <b>2 September 1945</b> setelah hancurnya pusat industri kota <b>Hiroshima</b> dan <b>Nagasaki</b> oleh bom atom.
+        </p>
+
+        <div class="fact-box">
+            <h3>Estimasi Dampak Korban</h3>
+            <p>Perang Dunia II merenggut korban jiwa hingga lebih dari <b>70 juta jiwa</b>, menjadikannya sejarah kelam sekaligus konflik militer paling destruktif sepanjang peradaban modern.</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
