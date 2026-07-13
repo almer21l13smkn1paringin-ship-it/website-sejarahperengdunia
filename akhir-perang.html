@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Perang Dunia II - Akhir Perang & Dampak Global</title>
+
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.8;
+            color: #334155;
+            background-color: #f8fafc;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header Premium & Estetik */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #991b1b;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        /* Navigasi Sticky Modern dengan Efek Blur */
+        .menu {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .menu a {
+            color: #475569;
+            text-decoration: none;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu a:hover, .menu a.active {
+            color: #991b1b;
+        }
+
+        /* Garis indikator aktif di bawah menu */
+        .menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #991b1b;
+        }
+
+        /* Konten Utama Container */
+        .container {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .main-title {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            color: #0f172a;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background-color: #991b1b;
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #334155;
+            font-size: 1.05rem;
+        }
+
+        p b {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* Kotak Fakta Variasi Modern */
+        .fact-box {
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        .fact-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .fact-box ul {
+            list-style: none;
+        }
+
+        .fact-box ul li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 20px;
+            color: #475569;
+        }
+
+        /* Desain bullet point kustom yang mewah */
+        .fact-box ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #991b1b;
+            font-weight: bold;
+        }
+
+        .fact-box ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skema Warna Khusus Tiap Blok Arsip */
+        .germany-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #475569;
+        }
+        .germany-box h3 { color: #1e293b; }
+
+        .japan-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #991b1b;
+        }
+        .japan-box h3 { color: #991b1b; }
+        .japan-box ul li::before { color: #991b1b; }
+
+        /* Daftar Dampak Aktual (List Card Modern) */
+        .impact-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .impact-list li {
+            background-color: #ffffff;
+            margin-bottom: 12px;
+            padding: 18px 22px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            display: flex;
+            align-items: flex-start;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .impact-list li:hover {
+            transform: translateX(4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+
+        .impact-list li::before {
+            content: "✦";
+            color: #991b1b;
+            font-weight: bold;
+            margin-right: 16px;
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .impact-list li span {
+            font-size: 1rem;
+            color: #334155;
+        }
+
+        /* Kotak Kesimpulan Akhir (Eksklusif Dokumen Tua) */
+        .summary-box {
+            background: linear-gradient(to right, #f8fafc, #f1f5f9);
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #0f172a;
+            border-radius: 4px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        .summary-box h3 { 
+            color: #0f172a; 
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .menu { flex-direction: column; }
+            .menu a { width: 100%; text-align: center; padding: 12px; border-bottom: 1px solid #f1f5f9; }
+            .menu a.active::after { display: none; }
+            .main-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sejarah Perang Dunia II</h1>
+    </header>
+
+    <div class="menu">
+        <a href="index.html">Latar Belakang</a>
+        <a href="tokoh.html">Tokoh</a>
+        <a href="pertempuran.html">Pertempuran</a>
+        <a href="akhir-perang.html">Akhir Perang</a>
+    </div>
+
+    <div class="container">
+
+        <h1 class="main-title">Kehancuran Blok Poros & Akhir Perang Dunia II</h1>
+
+        <h2>Kekalahan Total Jerman</h2>
+        <p>
+            Memasuki awal tahun <b>1945</b>, lini pertahanan Jerman Nazi runtuh secara eksponensial akibat serangan simultan Sekutu dari dua front utama. Tentara Merah Uni Soviet merangsek hebat dari arah timur, sementara pasukan gabungan Amerika Serikat dan Britania Raya mengontrol pergerakan dari arah barat.
+        </p>
+        <p>
+            Terdesak tanpa celah, diktator <b>Adolf Hitler</b> memutuskan bunuh diri di dalam bunker komandonya di kota Berlin pada <b>30 April 1945</b>. Kehilangan pucuk pimpinan tertinggi memaksa komando militer Jerman menandatangani kapitulasi tanpa syarat pada tanggal <b>8 Mei 1945</b>. Momentum bersejarah ini kemudian diperingati dunia sebagai <b>V-E Day</b> (*Victory in Europe Day*).
+        </p>
+
+        <!-- Ringkasan Arsip Jerman -->
+        <div class="fact-box germany-box">
+            <h3>Kronologi Kejatuhan Teater Eropa</h3>
+            <ul>
+                <li>Pengepungan total kota Berlin oleh Tentara Merah (April 1945).</li>
+                <li>Runtuhnya kepemimpinan absolut pasca tewasnya Adolf Hitler (30 April 1945).</li>
+                <li>Penandatanganan dokumen menyerah tanpa syarat oleh Jerman (8 Mei 1945).</li>
+            </ul>
+        </div>
+
+        <h2>Kapitulasi Kekaisaran Jepang</h2>
+        <p>
+            Meskipun perang di Eropa telah usai, pertempuran berdarah masih berkobar di teater Pasifik. Demi menghindari invasi darat yang diprediksi memakan jutaan korban, Amerika Serikat mengambil langkah ekstrem dengan menjatuhkan <b>bom atom pertama</b> di kota industri <b>Hiroshima</b> pada <b>6 Agustus 1945</b>, diikuti bom atom kedua di <b>Nagasaki</b> pada <b>9 Agustus 1945</b>.
+        </p>
+        <p>
+            Dampak destruktif senjata nuklir tersebut, dikombinasikan dengan deklarasi perang Uni Soviet di Manchuria, memaksa Kaisar Hirohito mengumumkan menyerah tanpa syarat. Upacara formal penandatanganan dokumen menyerah dilakukan di atas kapal perang *USS Missouri* pada <b>2 September 1945</b>, yang kini dikenal sebagai <b>V-J Day</b> (*Victory over Japan Day*).
+        </p>
+
+        <!-- Ringkasan Arsip Jepang -->
+        <div class="fact-box japan-box">
+            <h3>Kronologi Kejatuhan Teater Asia-Pasifik</h3>
+            <ul>
+                <li>Pelepasan bom atom taktis pertama di Hiroshima (6 Agustus 1945).</li>
+                <li>Destruksi total kota Nagasaki melalui bom atom kedua (9 Agustus 1945).</li>
+                <li>Pernyataan menyerah resmi dan penandatanganan traktat perdamaian (2 September 1945).</li>
+            </ul>
+        </div>
+
+        <h2>Konsekuensi & Dampak Geopolitik Global</h2>
+        <p>Berakhirnya konfrontasi bersenjata ini mengubah tatanan politik, ekonomi, dan batas wilayah dunia secara radikal:</p>
+
+        <!-- Daftar Dampak Bergaya Minimalis Profesional -->
+        <ul class="impact-list">
+            <li><span>Resmi dibentuknya organisasi <b>Perserikatan Bangsa-Bangsa (PBB)</b> pada tahun 1945 sebagai instrumen pencegah konflik global jilid baru.</span></li>
+            <li><span>Polarisasi politik dunia yang terbagi kaku menjadi dua kubu utama, yakni <b>Blok Barat</b> (Kapitalis) dan <b>Blok Timur</b> (Komunis).</span></li>
+            <li><span>Pemicu awal pecahnya era <b>Perang Dingin</b> (*Cold War*) antara dua negara adidaya baru, Amerika Serikat dan Uni Soviet.</span></li>
+            <li><span>Runtuhnya kolonialisme klasik, memicu gelombang dekolonisasi dan <b>kemerdekaan nasional</b> di berbagai wilayah Asia dan Afrika.</span></li>
+            <li><span>Pembagian kedaulatan wilayah teritorial Jerman menjadi dua bagian administratif, yaitu <b>Jerman Barat</b> dan <b>Jerman Timur</b>.</span></li>
+        </ul>
+
+        <!-- Kotak Kesimpulan Filosofis -->
+        <div class="summary-box">
+            <h3>Konklusi Sejarah</h3>
+            <p style="text-align: center; margin-bottom: 0; color: #1e293b; font-style: italic;">
+                Perang Dunia II resmi ditutup pada tahun 1945 dengan kemenangan mutlak Aliansi Sekutu. Tragedi global ini menjadi pengingat abadi bagi kemanusiaan akan mahalnya harga yang harus dibayar akibat ambisi totalitarianisme, sekaligus menegaskan pentingnya konsensus perdamaian internasional.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Jurnal Sejarah Perang Dunia II. Dikembangkan untuk Keperluan Edukasi dan Riset.
+    </footer>
+
+</body>
+
+</html>
